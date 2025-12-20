@@ -1,0 +1,9 @@
+{
+  "buildCommand": "cd remix-of-centenary-chronicle-main && npm install && npm run build",
+  "outputDirectory": "remix-of-centenary-chronicle-main/dist",
+  "framework": "vite",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
+
