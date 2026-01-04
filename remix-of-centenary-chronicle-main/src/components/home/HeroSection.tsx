@@ -27,7 +27,7 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 sm:px-8 pt-20 pb-24 md:py-0">
-        <div className="max-w-4xl mx-auto text-center md:text-left">
+        <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2.5 bg-primary/15 backdrop-blur-md border border-primary/25 rounded-full px-5 py-2.5 mb-8 md:mb-10 animate-fade-up">
             <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
@@ -41,12 +41,12 @@ export function HeroSection() {
           </h1>
 
           {/* Subtitle - Single focused paragraph */}
-          <p className="font-body text-base sm:text-lg md:text-xl text-background/75 font-light mb-10 md:mb-12 animate-fade-up delay-200 max-w-2xl mx-auto md:mx-0 leading-relaxed">
+          <p className="font-body text-base sm:text-lg md:text-xl text-background/75 font-light mb-10 md:mb-12 animate-fade-up delay-200 max-w-2xl mx-auto leading-relaxed">
             Alliance High School at 100: celebrating a legacy of excellence, discipline, and brotherhood that has shaped generations of leaders.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-up delay-300">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up delay-300">
             <Button
               variant="default"
               size="lg"
