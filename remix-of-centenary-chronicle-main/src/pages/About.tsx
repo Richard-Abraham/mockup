@@ -43,7 +43,7 @@ const About = () => {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1920&auto=format&fit=crop')`,
+            backgroundImage: `url('/53568977371_785702acd9_b.jpg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'saturate(0.6)',
@@ -97,12 +97,23 @@ const About = () => {
             <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6 font-semibold">
               Our Origin — A Bold Vision That Took Root
             </h2>
-            <p className="font-body text-muted-foreground leading-relaxed mb-6">
-              Founded in 1926, Alliance High School began with a clear, uncompromising vision: to educate African boys to the highest academic and moral standards possible.
-            </p>
-            <p className="font-body text-muted-foreground leading-relaxed mb-6">
-              From the very beginning, Alliance rejected mediocrity. It demanded seriousness of purpose, intellectual rigor, and personal accountability—at a time when such expectations were rare.
-            </p>
+            <div className="grid md:grid-cols-2 gap-8 items-center mb-6">
+              <div>
+                <p className="font-body text-muted-foreground leading-relaxed mb-6">
+                  Founded in 1926, Alliance High School began with a clear, uncompromising vision: to educate African boys to the highest academic and moral standards possible.
+                </p>
+                <p className="font-body text-muted-foreground leading-relaxed mb-6">
+                  From the very beginning, Alliance rejected mediocrity. It demanded seriousness of purpose, intellectual rigor, and personal accountability—at a time when such expectations were rare.
+                </p>
+              </div>
+              <div className="rounded-lg overflow-hidden shadow-elevated">
+                <img
+                  src="/53569299759_1759d0b515_b.jpg"
+                  alt="Alliance High School historical image"
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+            </div>
             <p className="font-body text-foreground font-medium">
               What started as an experiment became a standard.
             </p>
@@ -118,19 +129,30 @@ const About = () => {
             <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6 font-semibold">
               What Has Never Changed — Our Core Philosophy
             </h2>
-            <p className="font-body text-muted-foreground leading-relaxed mb-6">
-              Across decades of social, political, and technological change, Alliance has remained anchored to principles that do not trend—they endure.
-            </p>
-            <p className="font-body text-muted-foreground leading-relaxed mb-6">
-              At the heart of Alliance is a belief that:
-            </p>
-            <div className="space-y-4 mb-6">
-              {corePhilosophy.map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <p className="font-body text-foreground">{item}</p>
+            <div className="grid md:grid-cols-2 gap-8 items-center mb-6">
+              <div>
+                <p className="font-body text-muted-foreground leading-relaxed mb-6">
+                  Across decades of social, political, and technological change, Alliance has remained anchored to principles that do not trend—they endure.
+                </p>
+                <p className="font-body text-muted-foreground leading-relaxed mb-6">
+                  At the heart of Alliance is a belief that:
+                </p>
+                <div className="space-y-4 mb-6">
+                  {corePhilosophy.map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <p className="font-body text-foreground">{item}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <div className="rounded-lg overflow-hidden shadow-elevated">
+                <img
+                  src="/54035275710_1f8e389f5a_b.jpg"
+                  alt="Alliance High School core philosophy"
+                  className="w-full h-64 object-cover"
+                />
+              </div>
             </div>
             <p className="font-body text-foreground font-medium">
               These values are not taught as theory. They are lived, reinforced, and expected.
@@ -147,19 +169,30 @@ const About = () => {
             <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6 font-semibold">
               The Alliance Experience — Formation, Not Comfort
             </h2>
-            <p className="font-body text-muted-foreground leading-relaxed mb-6">
-              Ask any Old Boy to describe Alliance honestly, and you will hear one recurring theme: It was not easy—and that was the point.
-            </p>
-            <p className="font-body text-muted-foreground leading-relaxed mb-6">
-              Alliance challenges students to:
-            </p>
-            <div className="space-y-4 mb-6">
-              {allianceChallenges.map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <p className="font-body text-foreground">{item}</p>
+            <div className="grid md:grid-cols-2 gap-8 items-center mb-6">
+              <div>
+                <p className="font-body text-muted-foreground leading-relaxed mb-6">
+                  Ask any Old Boy to describe Alliance honestly, and you will hear one recurring theme: It was not easy—and that was the point.
+                </p>
+                <p className="font-body text-muted-foreground leading-relaxed mb-6">
+                  Alliance challenges students to:
+                </p>
+                <div className="space-y-4 mb-6">
+                  {allianceChallenges.map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <p className="font-body text-foreground">{item}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <div className="rounded-lg overflow-hidden shadow-elevated">
+                <img
+                  src="/53569416700_91c79941c4_b.jpg"
+                  alt="Alliance High School experience"
+                  className="w-full h-64 object-cover"
+                />
+              </div>
             </div>
             <p className="font-body text-muted-foreground leading-relaxed mb-2">
               The goal has never been comfort.
@@ -179,6 +212,13 @@ const About = () => {
             <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6 font-semibold">
               The Brotherhood — Once Alliance, Always Alliance
             </h2>
+            <div className="rounded-lg overflow-hidden shadow-elevated mb-6">
+              <img
+                src="/53802000645_8d62c048d2_b.jpg"
+                alt="Alliance High School brotherhood"
+                className="w-full h-80 object-cover"
+              />
+            </div>
             <p className="font-body text-muted-foreground leading-relaxed mb-6">
               Alliance does not produce alumni. It produces Old Boys. That distinction matters.
             </p>
@@ -200,19 +240,30 @@ const About = () => {
             <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6 font-semibold">
               Our Role in the Nation — Quiet Impact, Lasting Influence
             </h2>
-            <p className="font-body text-muted-foreground leading-relaxed mb-6">
-              Alliance men have gone on to shape Kenya and the world across every sector imaginable—often without fanfare, but never without substance.
-            </p>
-            <p className="font-body text-muted-foreground leading-relaxed mb-6">
-              The school's influence is measured not just in titles held, but in:
-            </p>
-            <div className="space-y-4 mb-6">
-              {nationalInfluence.map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <p className="font-body text-foreground">{item}</p>
+            <div className="grid md:grid-cols-2 gap-8 items-center mb-6">
+              <div>
+                <p className="font-body text-muted-foreground leading-relaxed mb-6">
+                  Alliance men have gone on to shape Kenya and the world across every sector imaginable—often without fanfare, but never without substance.
+                </p>
+                <p className="font-body text-muted-foreground leading-relaxed mb-6">
+                  The school's influence is measured not just in titles held, but in:
+                </p>
+                <div className="space-y-4 mb-6">
+                  {nationalInfluence.map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <p className="font-body text-foreground">{item}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <div className="rounded-lg overflow-hidden shadow-elevated">
+                <img
+                  src="/54033954257_d962953377_b.jpg"
+                  alt="Alliance High School national influence"
+                  className="w-full h-64 object-cover"
+                />
+              </div>
             </div>
             <p className="font-body text-foreground font-medium">
               This quiet consistency is one of Alliance's greatest contributions.
@@ -258,6 +309,13 @@ const About = () => {
             <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6 font-semibold">
               The Next 100 Years — A Responsibility We Share
             </h2>
+            <div className="rounded-lg overflow-hidden shadow-elevated mb-6">
+              <img
+                src="/54035274815_8bac97cd6d_b.jpg"
+                alt="Alliance High School future"
+                className="w-full h-80 object-cover"
+              />
+            </div>
             <p className="font-body text-muted-foreground leading-relaxed mb-6">
               Alliance has given much. The future will demand more.
             </p>

@@ -8,7 +8,7 @@ const moments = [
     title: 'A Bold Experiment',
     description:
       'Founded in 1926, Alliance High School began as a bold experiment—to educate African boys to the highest possible standard, with character as the foundation.',
-    image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=600&auto=format&fit=crop',
+    image: '/52698993260_e7732a24d6_b.jpg',
   },
   {
     year: '1960s',
@@ -16,7 +16,7 @@ const moments = [
     title: 'Shaping a Nation',
     description:
       'Alliance educated leaders through colonialism, independence, and globalization. Adapted to changing times without surrendering core values.',
-    image: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=600&auto=format&fit=crop',
+    image: '/52730352171_5a4fccb3ee_b.jpg',
   },
   {
     year: '2026',
@@ -24,7 +24,7 @@ const moments = [
     title: 'Looking Forward',
     description:
       'The centenary is not about looking back with rose-tinted glasses. It is about understanding what must never be lost, even as we move forward.',
-    image: 'https://images.unsplash.com/photo-1606761568499-6d2451b23c66?q=80&w=600&auto=format&fit=crop',
+    image: '/53568113777_ba44a75956_b.jpg',
   },
 ];
 

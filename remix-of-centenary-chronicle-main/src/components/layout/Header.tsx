@@ -8,6 +8,7 @@ import ahsLogo from '@/assets/ahs-logo.png';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
+  { href: 'https://www.flickr.com/photos/ahsobc/albums/', label: 'Gallery', external: true },
 ];
 
 export function Header() {
@@ -55,23 +56,38 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={cn(
-                  'font-body text-base font-medium transition-all duration-300 relative',
-                  location.pathname === link.href
-                    ? 'text-primary'
-                    : 'text-foreground/80 hover:text-foreground'
-                )}
-              >
-                {link.label}
-                {location.pathname === link.href && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
-                )}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              if (link.external) {
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-body text-base font-medium transition-all duration-300 relative text-foreground/80 hover:text-foreground"
+                  >
+                    {link.label}
+                  </a>
+                );
+              }
+              return (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={cn(
+                    'font-body text-base font-medium transition-all duration-300 relative',
+                    location.pathname === link.href
+                      ? 'text-primary'
+                      : 'text-foreground/80 hover:text-foreground'
+                  )}
+                >
+                  {link.label}
+                  {location.pathname === link.href && (
+                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
+                  )}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* CTA Button */}
@@ -100,20 +116,35 @@ export function Header() {
         )}
       >
         <nav className="container mx-auto px-5 py-6 flex flex-col gap-4">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              to={link.href}
-              className={cn(
-                'font-body text-lg py-2 transition-colors',
-                location.pathname === link.href
-                  ? 'text-primary'
-                  : 'text-foreground/80 hover:text-foreground'
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            if (link.external) {
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-body text-lg py-2 transition-colors text-foreground/80 hover:text-foreground"
+                >
+                  {link.label}
+                </a>
+              );
+            }
+            return (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={cn(
+                  'font-body text-lg py-2 transition-colors',
+                  location.pathname === link.href
+                    ? 'text-primary'
+                    : 'text-foreground/80 hover:text-foreground'
+                )}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           <Button variant="default" size="lg" className="mt-4 w-full" asChild>
             <Link to="/about">Be Part of the 100-Year Story</Link>
           </Button>
