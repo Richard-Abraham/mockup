@@ -7,6 +7,7 @@ import ahsLogo from '@/assets/ahs-logo.png';
 const quickLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
+  { href: '/stories', label: 'Old Boy Stories' },
 ];
 
 const socialLinks = [
