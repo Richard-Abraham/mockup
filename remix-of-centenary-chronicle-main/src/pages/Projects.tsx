@@ -58,6 +58,18 @@ const Projects = () => {
             <div className="sticky top-20 z-40 bg-background/95 backdrop-blur-md border-b border-border mb-8 -mx-5 px-5 py-2">
               <TabsList className="w-full h-auto bg-muted/30 p-1 justify-start gap-1 overflow-x-auto">
                 <TabsTrigger
+                  value="chapel"
+                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm whitespace-nowrap px-4 py-2"
+                >
+                  Trinity Multipurpose Complex
+                </TabsTrigger>
+                <TabsTrigger
+                  value="ahseft"
+                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm whitespace-nowrap px-4 py-2"
+                >
+                  Endowment (AHSEFT)
+                </TabsTrigger>
+                <TabsTrigger
                   value="enkisoma"
                   className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm whitespace-nowrap px-4 py-2"
                 >
@@ -74,18 +86,6 @@ const Projects = () => {
                   className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm whitespace-nowrap px-4 py-2"
                 >
                   Classic Run (ACR)
-                </TabsTrigger>
-                <TabsTrigger
-                  value="chapel"
-                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm whitespace-nowrap px-4 py-2"
-                >
-                  Trinity Multipurpose Complex
-                </TabsTrigger>
-                <TabsTrigger
-                  value="ahseft"
-                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm whitespace-nowrap px-4 py-2"
-                >
-                  Endowment (AHSEFT)
                 </TabsTrigger>
               </TabsList>
             </div>

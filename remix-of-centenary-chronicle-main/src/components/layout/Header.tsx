@@ -8,7 +8,7 @@ import ahsLogo from '@/assets/ahs-logo.png';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
-  { href: '/stories', label: 'Old Boy Stories' },
+  { href: '/stories', label: 'Stories from old boys' },
   { href: '/projects', label: 'Our Projects' },
   { href: 'https://www.flickr.com/photos/ahsobc/albums/', label: 'Gallery', external: true },
 ];

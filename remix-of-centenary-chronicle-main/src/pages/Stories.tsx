@@ -1,5 +1,18 @@
+import type { FormEvent } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
 
 interface Story {
   name: string;
@@ -12,11 +25,11 @@ interface Story {
 
 const stories: Story[] = [
   {
-    name: 'Rubua Kirongothi',
+    name: 'Johnson Kirongothi',
     year: 'Class of 1985',
-    title: 'Chief Executive Officer, Tech Innovations Ltd',
-    text: 'Walking through the gates as a young student, I had no idea the foundation being laid would carry me through decades of challenges and triumphs. The discipline, the values, and the brotherhood forged here became the compass guiding every major decision in my life.',
-    quote: '"This school didn\'t just educate me—it transformed how I see leadership and service to others."',
+    title: 'Educator & Author',
+    text: 'The classrooms where I once sat as a student became the very spaces where I would later inspire generations of young minds. The teachers who shaped my understanding of literature and critical thinking showed me that education is not merely about imparting knowledge, but about igniting curiosity and nurturing character. My journey from student to educator to author has been a testament to the transformative power of learning that this institution instilled in me.',
+    quote: '"This school didn\'t just educate me—it transformed how I see the power of knowledge and the responsibility of sharing it with others."',
   },
   {
     name: 'Anyang Nyong\'o',
@@ -28,13 +41,18 @@ const stories: Story[] = [
   {
     name: 'Luchiri Omoto',
     year: 'Class of 1992',
-    title: 'Award-Winning Journalist & Author',
-    text: 'My time here taught me the power of storytelling and the responsibility that comes with it. The mentors who guided us understood that education was about more than grades—it was about shaping character and building resilience that would last a lifetime.',
-    quote: '"In every story I tell, I carry forward the principles of truth and accountability learned here."',
+    title: 'Geospace Engineer, Current Chairperson of Old Boys Club',
+    text: 'From the science laboratories where I first discovered my passion for understanding the world around us, to leading groundbreaking research in geospace engineering, this school taught me that curiosity combined with discipline leads to extraordinary achievements. Now, as Chairperson of the Old Boys Club, I have the privilege of giving back to the institution that shaped me, ensuring that future generations continue to benefit from the same foundation of excellence and brotherhood that guided my path.',
+    quote: '"The same principles of precision and dedication that guide my work in geospace engineering were first instilled within these walls."',
   },
 ];
 
 const Stories = () => {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    // TODO: Wire this form up to the backend/database when connection details are available.
+  }
+
   return (
     <main className="pt-20">
       {/* Hero Header */}
@@ -65,6 +83,92 @@ const Stories = () => {
         >
           <path d="M0,50 C360,100 1080,0 1440,50 L1440,100 L0,100 Z" />
         </svg>
+      </section>
+
+      {/* Intro & Submission Section */}
+      <section className="py-16 bg-muted/40 border-b border-border/60">
+        <div className="container mx-auto px-5 max-w-4xl flex flex-col md:flex-row md:items-center gap-10">
+          <div className="flex-1 space-y-4">
+            <h2 className="font-display text-3xl md:text-4xl text-foreground font-bold">
+              Stories From Old Boys
+            </h2>
+            <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed">
+              Welcome to our collection of stories from Old Boys of Alliance High School. Here, we celebrate the journeys,
+              lessons, and memories of those who once walked these halls and now carry the school&apos;s values into the world.
+            </p>
+            <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed">
+              If you are an Old Boy and would like to share your story, we warmly invite you to submit it using the form below.
+              Your experience could inspire the next generation of Old Boys.
+            </p>
+          </div>
+
+          <div className="w-full md:w-auto md:min-w-[260px] flex justify-start md:justify-end">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="hero" size="xl" className="w-full md:w-auto">
+                  Share Your Story
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-lg">
+                <DialogHeader>
+                  <DialogTitle>Submit Your Story</DialogTitle>
+                  <DialogDescription>
+                    Share your journey as an Old Boy of Alliance High School. The details below match the information shown on
+                    the story cards.
+                  </DialogDescription>
+                </DialogHeader>
+                <form onSubmit={handleSubmit} className="space-y-5 pt-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Name</Label>
+                    <Input id="name" name="name" placeholder="Your full name" required />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="classOf">Class Of</Label>
+                    <Input id="classOf" name="classOf" placeholder="e.g. Class of 1998" required />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="title">Title / Role</Label>
+                    <Input
+                      id="title"
+                      name="title"
+                      placeholder="e.g. Chief Executive Officer, Tech Innovations Ltd"
+                      required
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="quote">Quote</Label>
+                    <Input
+                      id="quote"
+                      name="quote"
+                      placeholder='A short quote, e.g. "This school didn&apos;t just educate me—it transformed how I see leadership."'
+                      required
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="story">Your Story</Label>
+                    <Textarea
+                      id="story"
+                      name="story"
+                      placeholder="Share your experience, memories, and how Alliance shaped your journey."
+                      rows={5}
+                      required
+                    />
+                  </div>
+
+                  <div className="flex justify-end gap-3 pt-2">
+                    <Button type="submit" variant="hero">
+                      Submit Story
+                    </Button>
+                  </div>
+                </form>
+              </DialogContent>
+            </Dialog>
+          </div>
+        </div>
       </section>
 
       {/* Stories Section */}
@@ -136,9 +240,97 @@ const Stories = () => {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-5">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="gold-line mx-auto mb-5" />
+            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4 font-bold">
+              Let&apos;s Finish What We Started
+            </h2>
+            <p className="font-body text-lg text-muted-foreground mb-8">
+              Together, we can continue the legacy of excellence that has defined Alliance High School for a century. Join us in shaping the next 100 years.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/projects">
+                  Support Our Projects
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="outline" size="lg" className="border-primary">
+                    Share Your Story
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-lg">
+                  <DialogHeader>
+                    <DialogTitle>Submit Your Story</DialogTitle>
+                    <DialogDescription>
+                      Share your journey as an Old Boy of Alliance High School. The details below match the information shown on
+                      the story cards.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <form onSubmit={handleSubmit} className="space-y-5 pt-2">
+                    <div className="space-y-2">
+                      <Label htmlFor="cta-name">Name</Label>
+                      <Input id="cta-name" name="name" placeholder="Your full name" required />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="cta-classOf">Class Of</Label>
+                      <Input id="cta-classOf" name="classOf" placeholder="e.g. Class of 1998" required />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="cta-title">Title / Role</Label>
+                      <Input
+                        id="cta-title"
+                        name="title"
+                        placeholder="e.g. Chief Executive Officer, Tech Innovations Ltd"
+                        required
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="cta-quote">Quote</Label>
+                      <Input
+                        id="cta-quote"
+                        name="quote"
+                        placeholder='A short quote, e.g. "This school didn&apos;t just educate me—it transformed how I see leadership."'
+                        required
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="cta-story">Your Story</Label>
+                      <Textarea
+                        id="cta-story"
+                        name="story"
+                        placeholder="Share your experience, memories, and how Alliance shaped your journey."
+                        rows={5}
+                        required
+                      />
+                    </div>
+
+                    <div className="flex justify-end gap-3 pt-2">
+                      <Button type="submit" variant="hero">
+                        Submit Story
+                      </Button>
+                    </div>
+                  </form>
+                </DialogContent>
+              </Dialog>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 };
 
 export default Stories;
+
 
