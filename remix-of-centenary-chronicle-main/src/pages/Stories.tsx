@@ -1,4 +1,5 @@
 import type { FormEvent } from 'react';
+import { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -13,6 +14,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import { toast } from 'sonner';
 
 interface Story {
   name: string;
@@ -48,9 +50,48 @@ const stories: Story[] = [
 ];
 
 const Stories = () => {
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    // TODO: Wire this form up to the backend/database when connection details are available.
+    setIsSubmitting(true);
+
+    const formData = new FormData(event.currentTarget);
+    const payload = {
+      name: formData.get('name') as string,
+      classOf: formData.get('classOf') as string,
+      title: formData.get('title') as string,
+      quote: formData.get('quote') as string,
+      story: formData.get('story') as string,
+    };
+
+    try {
+      const response = await fetch('/api/submit-story', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        toast.error(result.error ?? 'Failed to submit story. Please try again.');
+        setIsSubmitting(false);
+        return;
+      }
+
+      toast.success('Thank you! Your story has been submitted for review.');
+      event.currentTarget.reset();
+      setDialogOpen(false);
+    } catch (error) {
+      console.error('Error submitting story:', error);
+      toast.error('An unexpected error occurred. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -103,7 +144,7 @@ const Stories = () => {
           </div>
 
           <div className="w-full md:w-auto md:min-w-[260px] flex justify-start md:justify-end">
-            <Dialog>
+            <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
               <DialogTrigger asChild>
                 <Button variant="hero" size="xl" className="w-full md:w-auto">
                   Share Your Story
@@ -160,8 +201,8 @@ const Stories = () => {
                   </div>
 
                   <div className="flex justify-end gap-3 pt-2">
-                    <Button type="submit" variant="hero">
-                      Submit Story
+                    <Button type="submit" variant="hero" disabled={isSubmitting}>
+                      {isSubmitting ? 'Submitting...' : 'Submit Story'}
                     </Button>
                   </div>
                 </form>
@@ -259,7 +300,7 @@ const Stories = () => {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
-              <Dialog>
+              <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
                 <DialogTrigger asChild>
                   <Button variant="outline" size="lg" className="border-primary">
                     Share Your Story
@@ -316,8 +357,8 @@ const Stories = () => {
                     </div>
 
                     <div className="flex justify-end gap-3 pt-2">
-                      <Button type="submit" variant="hero">
-                        Submit Story
+                      <Button type="submit" variant="hero" disabled={isSubmitting}>
+                        {isSubmitting ? 'Submitting...' : 'Submit Story'}
                       </Button>
                     </div>
                   </form>
