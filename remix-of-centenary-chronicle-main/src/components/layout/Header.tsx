@@ -36,8 +36,8 @@ export function Header() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
         isScrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-lg'
-          : 'bg-background/80 backdrop-blur-sm'
+          ? 'bg-white/95 backdrop-blur-md shadow-lg'
+          : 'bg-white/90 md:bg-background/80 backdrop-blur-sm shadow-sm md:shadow-none'
       )}
     >
       <div className="container mx-auto px-5">
@@ -102,10 +102,10 @@ export function Header() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+            className="md:hidden p-2.5 rounded-md bg-primary/10 text-foreground hover:text-primary hover:bg-primary/20 transition-all duration-200 active:scale-95"
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={24} strokeWidth={2.5} /> : <Menu size={24} strokeWidth={2.5} />}
           </button>
         </div>
       </div>
@@ -113,44 +113,48 @@ export function Header() {
       {/* Mobile Menu */}
       <div
         className={cn(
-          'md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-md overflow-hidden transition-all duration-300',
-          isMobileMenuOpen ? 'max-h-96 border-b border-primary/20' : 'max-h-0'
+          'md:hidden absolute top-full left-0 right-0 z-50 overflow-hidden transition-all duration-300 ease-in-out',
+          isMobileMenuOpen 
+            ? 'max-h-[500px] opacity-100 visible' 
+            : 'max-h-0 opacity-0 invisible'
         )}
       >
-        <nav className="container mx-auto px-5 py-6 flex flex-col gap-4">
-          {navLinks.map((link) => {
-            if (link.external) {
+        <div className="bg-white shadow-xl border-b-2 border-primary/30">
+          <nav className="container mx-auto px-5 py-6 flex flex-col gap-2">
+            {navLinks.map((link) => {
+              if (link.external) {
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-body text-lg py-3 px-4 rounded-md transition-all duration-200 text-gray-700 hover:text-primary hover:bg-primary/10"
+                  >
+                    {link.label}
+                  </a>
+                );
+              }
               return (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-body text-lg py-2 transition-colors text-foreground/80 hover:text-foreground"
+                  to={link.href}
+                  className={cn(
+                    'font-body text-lg py-3 px-4 rounded-md transition-all duration-200',
+                    location.pathname === link.href
+                      ? 'text-primary bg-primary/10 font-semibold'
+                      : 'text-gray-700 hover:text-primary hover:bg-primary/10'
+                  )}
                 >
                   {link.label}
-                </a>
+                </Link>
               );
-            }
-            return (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={cn(
-                  'font-body text-lg py-2 transition-colors',
-                  location.pathname === link.href
-                    ? 'text-primary'
-                    : 'text-foreground/80 hover:text-foreground'
-                )}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
-          <Button variant="default" size="lg" className="mt-4 w-full" asChild>
-            <Link to="/about">Be Part of the 100-Year Story</Link>
-          </Button>
-        </nav>
+            })}
+            <Button variant="default" size="lg" className="mt-4 w-full" asChild>
+              <Link to="/about">Be Part of the 100-Year Story</Link>
+            </Button>
+          </nav>
+        </div>
       </div>
     </header>
   );
