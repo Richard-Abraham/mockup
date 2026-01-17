@@ -30,22 +30,22 @@ const stories: Story[] = [
     name: 'Johnson Kirongothi',
     year: 'Class of 1985',
     title: 'Educator & Author',
-    text: 'The classrooms where I once sat as a student became the very spaces where I would later inspire generations of young minds. The teachers who shaped my understanding of literature and critical thinking showed me that education is not merely about imparting knowledge, but about igniting curiosity and nurturing character. My journey from student to educator to author has been a testament to the transformative power of learning that this institution instilled in me.',
-    quote: '"This school didn\'t just educate me—it transformed how I see the power of knowledge and the responsibility of sharing it with others."',
+    text: 'The classrooms where I once sat as a student became the very spaces where I would later teach. The teachers who shaped my understanding of literature and critical thinking showed me that education is more than passing on knowledge. It is about sparking curiosity and building character. My journey from student to educator to author reflects the lasting impact that this institution had on me.',
+    quote: '"This school didn\'t just educate me. It transformed how I see the power of knowledge and the responsibility of sharing it with others."',
   },
   {
     name: 'Anyang Nyong\'o',
     year: 'Class of 1978',
     title: 'Governor & Public Servant',
-    text: 'The lessons learned within these walls extended far beyond the classroom. They taught us to think critically, to stand for what is right, and to serve our communities with integrity. Every policy I\'ve championed, every decision I\'ve made, has roots in the values instilled here.',
-    quote: '"Excellence was not just expected—it was woven into the very fabric of our daily lives."',
+    text: 'The lessons learned within these walls extended far beyond the classroom. They taught us to think critically, to stand for what is right, and to serve our communities with integrity. Every policy I\'ve championed, every decision I\'ve made, has roots in the values I learned here.',
+    quote: '"Excellence was not just expected. It was part of everything we did."',
   },
   {
     name: 'Luchiri Omoto',
     year: 'Class of 1992',
     title: 'Geospace Engineer, Current Chairperson of Old Boys Club',
     text: 'From the science laboratories where I first discovered my passion for understanding the world around us, to leading groundbreaking research in geospace engineering, this school taught me that curiosity combined with discipline leads to extraordinary achievements. Now, as Chairperson of the Old Boys Club, I have the privilege of giving back to the institution that shaped me, ensuring that future generations continue to benefit from the same foundation of excellence and brotherhood that guided my path.',
-    quote: '"The same principles of precision and dedication that guide my work in geospace engineering were first instilled within these walls."',
+    quote: '"The same principles of precision and dedication that guide my work in geospace engineering were first taught to me here."',
   },
 ];
 
@@ -184,7 +184,7 @@ const Stories = () => {
                     <Input
                       id="quote"
                       name="quote"
-                      placeholder='A short quote, e.g. "This school didn&apos;t just educate me—it transformed how I see leadership."'
+                      placeholder='A short quote, e.g. "This school didn&apos;t just educate me. It transformed how I see leadership."'
                       required
                     />
                   </div>
@@ -340,7 +340,7 @@ const Stories = () => {
                       <Input
                         id="cta-quote"
                         name="quote"
-                        placeholder='A short quote, e.g. "This school didn&apos;t just educate me—it transformed how I see leadership."'
+                        placeholder='A short quote, e.g. "This school didn&apos;t just educate me. It transformed how I see leadership."'
                         required
                       />
                     </div>

@@ -189,7 +189,7 @@ const Projects = () => {
                   </div>
 
                   <div>
-                    <h3 className="font-display text-xl font-semibold mb-3 text-foreground">The KSN Matiba – BMG Scholarships</h3>
+                    <h3 className="font-display text-xl font-semibold mb-3 text-foreground">The KSN Matiba / BMG Scholarships</h3>
                     <p className="font-body text-muted-foreground leading-relaxed mb-4">
                       Named in honor of the late Hon. Kenneth S.N. Matiba (AHS Index 1170), these scholarships target students who demonstrate:
                     </p>
@@ -227,7 +227,7 @@ const Projects = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        KSN Matiba – BMG Scholarships Award Notification Letter
+                        KSN Matiba / BMG Scholarships Award Notification Letter
                       </a>
                     </Button>
                   </div>
@@ -321,7 +321,7 @@ const Projects = () => {
                   <div>
                     <h3 className="font-display text-xl font-semibold mb-3 text-foreground">The Project</h3>
                     <p className="font-body text-muted-foreground leading-relaxed mb-4">
-                      The Trinity Multipurpose Complex, now under construction was designed in 2016 by Architects Eric Kamau, Aggrey Maganga and Dr. Noel J. O. Okello. The complex is comprised of a Chapel with a a sitting capacity of 4,500 which is approximately five times the capacity of the current chapel. The aesthetically pleasing complex will have an amphitheater with a sitting capacity of 500 people as well as a legacy library to curate the history, records and artifacts of Alliance High School. The complex will serve the school another for 50 years. This is the first project of the grand masterplan of AHS for the next 100 years.
+                      The Trinity Multipurpose Complex, now under construction was designed in 2016 by Architects Eric Kamau, Aggrey Maganga and Dr. Noel J. O. Okello. The complex is comprised of a Chapel with a sitting capacity of 4,500 which is approximately five times the capacity of the current chapel. The complex will have an amphitheater with a sitting capacity of 500 people as well as a legacy library to preserve the history, records and artifacts of Alliance High School. The complex will serve the school for another 50 years. This is the first project of the grand masterplan of AHS for the next 100 years.
                     </p>
                     <p className="font-body text-foreground leading-relaxed">
                       We call upon the great alums of Alliance High School to help redefine the infrastructure story in the school and enhance the chapel experience, an experience we all relate to by the beautiful hymns we used to sing.
@@ -414,7 +414,7 @@ const Projects = () => {
                       </li>
                       <li className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="font-body text-foreground">The KSN Matiba – Busherian Mountaineers Group Fund</span>
+                        <span className="font-body text-foreground">The KSN Matiba / Busherian Mountaineers Group Fund</span>
                       </li>
                       <li className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />

@@ -22,7 +22,7 @@ export function FutureWeOwe() {
 
         <div className="max-w-4xl mx-auto">
           <p className="font-body text-center text-background/80 mb-8 text-lg">
-            Today's students are watching us—whether we realize it or not.
+            Today's students are watching us, whether we realize it or not.
           </p>
           
           <p className="font-body text-center text-background/80 mb-8">

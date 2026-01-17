@@ -52,7 +52,7 @@ export function Header() {
               />
             </div>
             <div className="hidden sm:block">
-              <div className="text-primary text-xs tracking-wider font-display font-semibold">1926 — 2026</div>
+              <div className="text-primary text-xs tracking-wider font-display font-semibold">1926 - 2026</div>
             </div>
           </Link>
 

@@ -13,7 +13,7 @@ export function AllianceDifference() {
             What Made Us, Still Makes Us
           </p>
           <p className="font-body text-base text-muted-foreground max-w-3xl mx-auto">
-            Every Old Boy knows this truth: Alliance did not just teach us what to think—it taught us how to stand.
+            Every Old Boy knows this truth: Alliance did not just teach us what to think. It taught us how to stand.
           </p>
         </div>
 

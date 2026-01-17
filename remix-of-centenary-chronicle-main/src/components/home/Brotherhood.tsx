@@ -39,7 +39,7 @@ export function Brotherhood() {
               Whether you left Alliance five years ago or fifty, the bond is the same. You recognize it in the posture. In the way Alliance boys speak about responsibility. In the quiet pride that doesn't need announcing.
             </p>
             <p className="font-body text-foreground font-medium">
-              This centenary brings Old Boys home—not just physically, but in spirit.
+              This centenary brings Old Boys home, not just physically, but in spirit.
             </p>
           </div>
         </div>

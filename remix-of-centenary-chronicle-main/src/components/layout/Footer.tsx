@@ -32,7 +32,7 @@ export function Footer() {
               alt="Alliance High School Logo" 
               className="w-24 h-24 object-contain mb-4"
             />
-            <p className="font-body text-sm text-background/70 mb-2">1926 — 2026</p>
+            <p className="font-body text-sm text-background/70 mb-2">1926 - 2026</p>
             <p className="font-display text-lg text-background/90 italic leading-relaxed">
               "Strong to Serve"
             </p>

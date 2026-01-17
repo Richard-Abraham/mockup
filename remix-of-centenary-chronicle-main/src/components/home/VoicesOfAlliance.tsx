@@ -39,7 +39,7 @@ export function VoicesOfAlliance() {
           </div>
 
           <p className="font-body text-center text-muted-foreground max-w-3xl mx-auto">
-            This centenary platform will capture reflections, stories, and lessons from across generations—because the lived experience of Alliance boys is one of its greatest assets.
+            This centenary platform will capture reflections, stories, and lessons from across generations because the lived experience of Alliance boys is one of its greatest assets.
           </p>
         </div>
       </div>

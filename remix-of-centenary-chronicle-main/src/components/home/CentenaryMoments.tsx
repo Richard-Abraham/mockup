@@ -7,7 +7,7 @@ const moments = [
     decade: 'The Beginning',
     title: 'A Bold Experiment',
     description:
-      'Founded in 1926, Alliance High School began as a bold experiment—to educate African boys to the highest possible standard, with character as the foundation.',
+      'Founded in 1926, Alliance High School began as a bold experiment to educate African boys to the highest possible standard, with character as the foundation.',
     image: '/52698993260_e7732a24d6_b.jpg',
   },
   {
@@ -72,7 +72,7 @@ export function CentenaryMoments() {
           From 1926 to Tomorrow
         </p>
         <p className="font-body text-base text-muted-foreground max-w-3xl mx-auto mb-8">
-          Founded in 1926, Alliance High School began as a bold experiment—to educate African boys to the highest possible standard, with character as the foundation.
+          Founded in 1926, Alliance High School began as a bold experiment to educate African boys to the highest possible standard, with character as the foundation.
         </p>
         
         <div className="max-w-2xl mx-auto mb-8">
