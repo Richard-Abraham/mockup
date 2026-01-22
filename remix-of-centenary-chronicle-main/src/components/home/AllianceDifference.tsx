@@ -7,7 +7,7 @@ export function AllianceDifference() {
         <div className="text-center mb-12">
           <div className="gold-line mx-auto mb-5" />
           <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4 font-semibold">
-            The Alliance Difference
+            The History of Alliance High School
           </h2>
           <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto mb-4">
             What Made Us, Still Makes Us
