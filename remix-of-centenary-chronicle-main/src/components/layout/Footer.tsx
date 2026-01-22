@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import { Mail, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import ahsLogo from '@/assets/ahs-logo.png';
+
+// School logo from public folder
+const schoolLogo = '/cropped-logoAHS.png';
 
 const quickLinks = [
   { href: '/', label: 'Home' },
@@ -28,7 +30,7 @@ export function Footer() {
           {/* Column 1: Logo & Tagline */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
             <img 
-              src={ahsLogo} 
+              src={schoolLogo} 
               alt="Alliance High School Logo" 
               className="w-24 h-24 object-contain mb-4"
             />

@@ -1,4 +1,4 @@
-﻿import { ChevronDown, ArrowRight } from 'lucide-react';
+import { ChevronDown, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -15,15 +15,15 @@ export function HeroSection() {
       {/* Background layers */}
       <div className="absolute inset-0 bg-foreground" />
       <div 
-        className="absolute inset-0 opacity-25"
+        className="absolute inset-0 opacity-50"
         style={{
-          backgroundImage: `url('/52450467586_6b588ebc96_b.jpg')`,
+          backgroundImage: `url('/53568977371_785702acd9_b (1).jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          filter: 'grayscale(100%) contrast(1.2)',
+          filter: 'grayscale(30%) contrast(1.1)',
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-foreground/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-foreground/50 via-foreground/30 to-foreground/80" />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 sm:px-8 pt-20 pb-24 md:py-0">

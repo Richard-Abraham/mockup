@@ -3,7 +3,10 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import ahsLogo from '@/assets/ahs-logo.png';
+import clubLogo from '@/assets/ahs-logo.png';
+
+// School logo from public folder
+const schoolLogo = '/cropped-logoAHS.png';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -42,11 +45,11 @@ export function Header() {
     >
       <div className="container mx-auto px-5">
         <div className="flex items-center justify-between h-20 md:h-[84px]">
-          {/* Logo */}
+          {/* School Logo (Left) */}
           <Link to="/" className="flex items-center gap-3 group">
             <div className="relative">
               <img 
-                src={ahsLogo} 
+                src={schoolLogo} 
                 alt="Alliance High School Logo" 
                 className="w-12 h-12 md:w-14 md:h-14 object-contain"
               />
@@ -92,21 +95,33 @@ export function Header() {
             })}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* Right Side: CTA Button + Club Logo */}
+          <div className="hidden md:flex items-center gap-4">
             <Button variant="default" size="lg" asChild>
               <Link to="/about">Be Part of the 100-Year Story</Link>
             </Button>
+            <img 
+              src={clubLogo} 
+              alt="AHS Old Boys Club Logo" 
+              className="w-12 h-12 md:w-14 md:h-14 object-contain"
+            />
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2.5 rounded-md bg-primary/10 text-foreground hover:text-primary hover:bg-primary/20 transition-all duration-200 active:scale-95"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} strokeWidth={2.5} /> : <Menu size={24} strokeWidth={2.5} />}
-          </button>
+          {/* Mobile: Club Logo + Menu Toggle */}
+          <div className="md:hidden flex items-center gap-3">
+            <img 
+              src={clubLogo} 
+              alt="AHS Old Boys Club Logo" 
+              className="w-10 h-10 object-contain"
+            />
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2.5 rounded-md bg-primary/10 text-foreground hover:text-primary hover:bg-primary/20 transition-all duration-200 active:scale-95"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} strokeWidth={2.5} /> : <Menu size={24} strokeWidth={2.5} />}
+            </button>
+          </div>
         </div>
       </div>
 

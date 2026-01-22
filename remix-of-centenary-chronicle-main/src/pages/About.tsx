@@ -1,5 +1,7 @@
 import { CheckCircle2 } from 'lucide-react';
-import ahsLogo from '@/assets/ahs-logo.png';
+
+// School logo from public folder
+const schoolLogo = '/cropped-logoAHS.png';
 
 const About = () => {
   const corePhilosophy = [
@@ -71,7 +73,7 @@ const About = () => {
         <div className="container mx-auto px-5">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-6 mb-8">
-              <img src={ahsLogo} alt="AHS Logo" className="w-20 h-20 object-contain" />
+              <img src={schoolLogo} alt="AHS Logo" className="w-20 h-20 object-contain" />
               <div>
                 <h2 className="font-display text-2xl md:text-3xl text-foreground font-semibold">We Are Alliance: More Than a School</h2>
               </div>
